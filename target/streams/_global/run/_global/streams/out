@@ -1,0 +1,84 @@
+[0m[[0m[0minfo[0m] [0m[0mrunning (fork) AnalyzeData [0m
+[0m[[0m[31merror[0m] [0m[0mUsing Spark's default log4j profile: org/apache/spark/log4j-defaults.properties[0m
+[0m[[0m[31merror[0m] [0m[0m26/05/04 21:26:23 INFO SparkContext: Running Spark version 3.1.1[0m
+[0m[[0m[31merror[0m] [0m[0m26/05/04 21:26:23 WARN Shell: Did not find winutils.exe: {}[0m
+[0m[[0m[31merror[0m] [0m[0mjava.io.FileNotFoundException: java.io.FileNotFoundException: HADOOP_HOME and hadoop.home.dir are unset. -see https://wiki.apache.org/hadoop/WindowsProblems[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.hadoop.util.Shell.fileNotFoundException(Shell.java:548)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.hadoop.util.Shell.getHadoopHomeDir(Shell.java:569)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.hadoop.util.Shell.getQualifiedBin(Shell.java:592)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.hadoop.util.Shell.<clinit>(Shell.java:689)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.hadoop.util.StringUtils.<clinit>(StringUtils.java:78)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.hadoop.conf.Configuration.getBoolean(Configuration.java:1664)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.hadoop.security.SecurityUtil.setConfigurationInternal(SecurityUtil.java:104)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.hadoop.security.SecurityUtil.<clinit>(SecurityUtil.java:88)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.hadoop.security.UserGroupInformation.initialize(UserGroupInformation.java:316)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.hadoop.security.UserGroupInformation.ensureInitialized(UserGroupInformation.java:304)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.hadoop.security.UserGroupInformation.doSubjectLogin(UserGroupInformation.java:1828)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.hadoop.security.UserGroupInformation.createLoginUser(UserGroupInformation.java:710)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.hadoop.security.UserGroupInformation.getLoginUser(UserGroupInformation.java:660)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.hadoop.security.UserGroupInformation.getCurrentUser(UserGroupInformation.java:571)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.util.Utils$.$anonfun$getCurrentUserName$1(Utils.scala:2476)[0m
+[0m[[0m[31merror[0m] [0m[0m	at scala.Option.getOrElse(Option.scala:189)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.util.Utils$.getCurrentUserName(Utils.scala:2476)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.SparkContext.<init>(SparkContext.scala:314)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.SparkContext$.getOrCreate(SparkContext.scala:2678)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.SparkSession$Builder.$anonfun$getOrCreate$2(SparkSession.scala:942)[0m
+[0m[[0m[31merror[0m] [0m[0m	at scala.Option.getOrElse(Option.scala:189)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.SparkSession$Builder.getOrCreate(SparkSession.scala:936)[0m
+[0m[[0m[31merror[0m] [0m[0m	at AnalyzeData$.delayedEndpoint$AnalyzeData$1(04_analysis.scala:7)[0m
+[0m[[0m[31merror[0m] [0m[0m	at AnalyzeData$delayedInit$body.apply(04_analysis.scala:3)[0m
+[0m[[0m[31merror[0m] [0m[0m	at scala.Function0.apply$mcV$sp(Function0.scala:39)[0m
+[0m[[0m[31merror[0m] [0m[0m	at scala.Function0.apply$mcV$sp$(Function0.scala:39)[0m
+[0m[[0m[31merror[0m] [0m[0m	at scala.runtime.AbstractFunction0.apply$mcV$sp(AbstractFunction0.scala:17)[0m
+[0m[[0m[31merror[0m] [0m[0m	at scala.App.$anonfun$main$1$adapted(App.scala:80)[0m
+[0m[[0m[31merror[0m] [0m[0m	at scala.collection.immutable.List.foreach(List.scala:431)[0m
+[0m[[0m[31merror[0m] [0m[0m	at scala.App.main(App.scala:80)[0m
+[0m[[0m[31merror[0m] [0m[0m	at scala.App.main$(App.scala:78)[0m
+[0m[[0m[31merror[0m] [0m[0m	at AnalyzeData$.main(04_analysis.scala:3)[0m
+[0m[[0m[31merror[0m] [0m[0m	at AnalyzeData.main(04_analysis.scala)[0m
+[0m[[0m[31merror[0m] [0m[0mCaused by: java.io.FileNotFoundException: HADOOP_HOME and hadoop.home.dir are unset.[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.hadoop.util.Shell.checkHadoopHomeInner(Shell.java:468)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.hadoop.util.Shell.checkHadoopHome(Shell.java:439)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.hadoop.util.Shell.<clinit>(Shell.java:516)[0m
+[0m[[0m[31merror[0m] [0m[0m	... 29 more[0m
+[0m[[0m[31merror[0m] [0m[0m26/05/04 21:26:23 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable[0m
+[0m[[0m[31merror[0m] [0m[0m26/05/04 21:26:23 INFO ResourceUtils: ==============================================================[0m
+[0m[[0m[31merror[0m] [0m[0m26/05/04 21:26:23 INFO ResourceUtils: No custom resources configured for spark.driver.[0m
+[0m[[0m[31merror[0m] [0m[0m26/05/04 21:26:23 INFO ResourceUtils: ==============================================================[0m
+[0m[[0m[31merror[0m] [0m[0m26/05/04 21:26:23 INFO SparkContext: Submitted application: Overdose Poverty Analysis[0m
+[0m[[0m[31merror[0m] [0m[0m26/05/04 21:26:23 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)[0m
+[0m[[0m[31merror[0m] [0m[0m26/05/04 21:26:23 INFO ResourceProfile: Limiting resource is cpu[0m
+[0m[[0m[31merror[0m] [0m[0m26/05/04 21:26:23 INFO ResourceProfileManager: Added ResourceProfile id: 0[0m
+[0m[[0m[31merror[0m] [0m[0m26/05/04 21:26:23 INFO SecurityManager: Changing view acls to: hanle[0m
+[0m[[0m[31merror[0m] [0m[0m26/05/04 21:26:23 INFO SecurityManager: Changing modify acls to: hanle[0m
+[0m[[0m[31merror[0m] [0m[0m26/05/04 21:26:23 INFO SecurityManager: Changing view acls groups to: [0m
+[0m[[0m[31merror[0m] [0m[0m26/05/04 21:26:23 INFO SecurityManager: Changing modify acls groups to: [0m
+[0m[[0m[31merror[0m] [0m[0m26/05/04 21:26:23 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(hanle); groups with view permissions: Set(); users  with modify permissions: Set(hanle); groups with modify permissions: Set()[0m
+[0m[[0m[31merror[0m] [0m[0m26/05/04 21:26:24 INFO Utils: Successfully started service 'sparkDriver' on port 49714.[0m
+[0m[[0m[31merror[0m] [0m[0m26/05/04 21:26:24 INFO SparkEnv: Registering MapOutputTracker[0m
+[0m[[0m[31merror[0m] [0m[0m26/05/04 21:26:24 INFO SparkEnv: Registering BlockManagerMaster[0m
+[0m[[0m[31merror[0m] [0m[0m26/05/04 21:26:24 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information[0m
+[0m[[0m[31merror[0m] [0m[0m26/05/04 21:26:24 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up[0m
+[0m[[0m[31merror[0m] [0m[0m26/05/04 21:26:24 INFO SparkEnv: Registering BlockManagerMasterHeartbeat[0m
+[0m[[0m[31merror[0m] [0m[0m26/05/04 21:26:24 INFO DiskBlockManager: Created local directory at C:\Users\hanle\AppData\Local\Temp\blockmgr-96718257-c5fb-4159-9be2-19cdfd0aaffa[0m
+[0m[[0m[31merror[0m] [0m[0m26/05/04 21:26:24 INFO MemoryStore: MemoryStore started with capacity 912.3 MiB[0m
+[0m[[0m[31merror[0m] [0m[0m26/05/04 21:26:24 INFO SparkEnv: Registering OutputCommitCoordinator[0m
+[0m[[0m[31merror[0m] [0m[0m26/05/04 21:26:24 INFO Utils: Successfully started service 'SparkUI' on port 4040.[0m
+[0m[[0m[31merror[0m] [0m[0m26/05/04 21:26:24 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://DESKTOP-9N282B8:4040[0m
+[0m[[0m[31merror[0m] [0m[0m26/05/04 21:26:25 INFO Executor: Starting executor ID driver on host DESKTOP-9N282B8[0m
+[0m[[0m[31merror[0m] [0m[0m26/05/04 21:26:25 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 49765.[0m
+[0m[[0m[31merror[0m] [0m[0m26/05/04 21:26:25 INFO NettyBlockTransferService: Server created on DESKTOP-9N282B8:49765[0m
+[0m[[0m[31merror[0m] [0m[0m26/05/04 21:26:25 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy[0m
+[0m[[0m[31merror[0m] [0m[0m26/05/04 21:26:25 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, DESKTOP-9N282B8, 49765, None)[0m
+[0m[[0m[31merror[0m] [0m[0m26/05/04 21:26:25 INFO BlockManagerMasterEndpoint: Registering block manager DESKTOP-9N282B8:49765 with 912.3 MiB RAM, BlockManagerId(driver, DESKTOP-9N282B8, 49765, None)[0m
+[0m[[0m[31merror[0m] [0m[0m26/05/04 21:26:25 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, DESKTOP-9N282B8, 49765, None)[0m
+[0m[[0m[31merror[0m] [0m[0m26/05/04 21:26:25 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, DESKTOP-9N282B8, 49765, None)[0m
+[0m[[0m[31merror[0m] [0m[0m26/05/04 21:26:29 WARN package: Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.sql.debug.maxToStringFields'.[0m
+[0m[[0m[0minfo[0m] [0m[0mAverage overdose ED visit rate by poverty bucket (localities grouped by % of families below poverty line):[0m
+[0m[[0m[0minfo[0m] [0m[0m+--------------+-----------+-----------------+----------------+[0m
+[0m[[0m[0minfo[0m] [0m[0m|poverty_bucket|num_records|avg_ed_visit_rate|avg_poverty_rate|[0m
+[0m[[0m[0minfo[0m] [0m[0m+--------------+-----------+-----------------+----------------+[0m
+[0m[[0m[0minfo[0m] [0m[0m|   High (10%+)|         18|            64.72|           11.63|[0m
+[0m[[0m[0minfo[0m] [0m[0m|Medium (5-10%)|         36|            58.12|             7.4|[0m
+[0m[[0m[0minfo[0m] [0m[0m|Low (under 5%)|         36|            41.07|             4.3|[0m
+[0m[[0m[0minfo[0m] [0m[0m+--------------+-----------+-----------------+----------------+[0m

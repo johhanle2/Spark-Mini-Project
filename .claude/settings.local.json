@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-ChildItem -Path \"C:\\\\Users\\\\hanle\\\\OneDrive\\\\Desktop\\\\Grad School\\\\Spring 2026\\\\Big Data Cloud\" | ForEach-Object { $_.FullName })",
+      "PowerShell(dir \"C:\\\\Users\\\\hanle\\\\OneDrive\\\\Desktop\\\\Grad School\\\\Spring 2026\\\\Big Data Cloud\\\\gcloud_scripts-main\" -Recurse | Where-Object { $_.Name -eq \"build.sbt\" })"
+    ]
+  }
+}
