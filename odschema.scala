@@ -1,4 +1,4 @@
-package edu.vcu.sparksqlapi_example
+package edu.vcu.sparkminiproject
 
 case class odSchema(fips: String, year: Int, drugType: String, rateVisits: Float, visitCount: Int)
 

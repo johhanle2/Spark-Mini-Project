@@ -1,4 +1,4 @@
-package edu.vcu.sparksqlapi_example
+package edu.vcu.sparkminiproject
 
 import org.apache.spark.sql.{DataFrame, SparkSession}
 import org.apache.hadoop.fs.{FileSystem, Path}

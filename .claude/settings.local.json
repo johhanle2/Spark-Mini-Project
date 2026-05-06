@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-ChildItem -Path \"C:\\\\Users\\\\hanle\\\\OneDrive\\\\Desktop\\\\Grad School\\\\Spring 2026\\\\Big Data Cloud\" | ForEach-Object { $_.FullName })",
+      "PowerShell(dir \"C:\\\\Users\\\\hanle\\\\OneDrive\\\\Desktop\\\\Grad School\\\\Spring 2026\\\\Big Data Cloud\\\\gcloud_scripts-main\" -Recurse | Where-Object { $_.Name -eq \"build.sbt\" })",
+      "PowerShell(Invoke-WebRequest -Uri \"https://github.com/cdarlint/winutils/raw/master/hadoop-3.2.2/bin/winutils.exe\" -OutFile \"C:\\\\hadoop\\\\bin\\\\winutils.exe\")",
+      "PowerShell(Move-Item \"c:\\\\Users\\\\hanle\\\\OneDrive\\\\Desktop\\\\Grad School\\\\Spring 2026\\\\Big Data Cloud\\\\info602-final-project\\\\MergeCACSData.scala\" \"c:\\\\Users\\\\hanle\\\\OneDrive\\\\Desktop\\\\Grad School\\\\Spring 2026\\\\Big Data Cloud\\\\info602-final-project\\\\MergeData.scala\")",
+      "PowerShell(Move-Item \"c:\\\\Users\\\\hanle\\\\OneDrive\\\\Desktop\\\\Grad School\\\\Spring 2026\\\\Big Data Cloud\\\\info602-final-project\\\\MergeACSData.scala\" \"c:\\\\Users\\\\hanle\\\\OneDrive\\\\Desktop\\\\Grad School\\\\Spring 2026\\\\Big Data Cloud\\\\info602-final-project\\\\MergeData.scala\")"
+    ]
+  }
+}
