@@ -1,48 +1,48 @@
-val sparkVersion = settingKey[String]("Spark version")
+name         := "info602-final-project"
+organization := "vcu"
+version      := "0.1.0-SNAPSHOT"
+scalaVersion := "2.12.13"
 
-lazy val root = (project in file(".")).
+val sparkVersion = "3.1.1"
 
-  settings(
-    inThisBuild(List(
-      organization := "vcu",
-      scalaVersion := "2.12.13"
-    )),
-    name := "info602-final-project",
-    version := "0.0.1",
+resolvers ++= Seq(
+  Resolver.mavenCentral,
+  "Spark Packages" at "https://repos.spark-packages.org/"
+)
 
-    sparkVersion := "3.1.1",
+libraryDependencies ++= Seq(
+  "org.apache.spark" %% "spark-core"  % sparkVersion % "provided",
+  "org.apache.spark" %% "spark-sql"   % sparkVersion % "provided",
+  "org.apache.spark" %% "spark-mllib" % sparkVersion % "provided",
+  "org.scalatest"    %% "scalatest"   % "3.2.9"      % Test
+)
 
-    javacOptions ++= Seq("-source", "1.8", "-target", "1.8"),
-    javaOptions ++= Seq("-Xms512M", "-Xmx2048M"),
-    scalacOptions ++= Seq("-deprecation", "-unchecked"),
-    parallelExecution in Test := false,
-    fork := true,
+// Include "provided" deps on the classpath when running locally with sbt run
+run in Compile := Defaults.runTask(
+  fullClasspath in Compile,
+  mainClass in (Compile, run),
+  runner in (Compile, run)
+).evaluated
 
-    libraryDependencies ++= Seq(
-      "org.apache.spark" %% "spark-core" % "3.1.1" % "provided",
-      "org.apache.spark" %% "spark-sql" % "3.1.1" % "provided",
-    ),
+scalacOptions ++= Seq(
+  "-deprecation",
+  "-feature",
+  "-unchecked",
+  "-Xfatal-warnings"
+)
 
-    // uses compile classpath for the run task, including "provided" jar (cf http://stackoverflow.com/a/21803413/3827)
-    run in Compile := Defaults.runTask(fullClasspath in Compile, mainClass in (Compile, run), runner in (Compile, run)).evaluated,
+fork in run := false
 
-    scalacOptions ++= Seq("-deprecation", "-unchecked"),
-    pomIncludeRepository := { x => false },
+// sbt-assembly: exclude Scala stdlib so the cluster provides it
+assembly / assemblyOption ~= {
+  _.withIncludeScala(false)
+}
 
-    resolvers ++= Seq(
-      "sonatype-releases" at "https://oss.sonatype.org/content/repositories/releases/",
-      "Typesafe repository" at "https://repo.typesafe.com/typesafe/releases/",
-      "Second Typesafe repo" at "https://repo.typesafe.com/typesafe/maven-releases/",
-      Resolver.sonatypeRepo("public")
-    ),
-
-    pomIncludeRepository := { _ => false },
-
-    publishTo := {
-      val nexus = "https://oss.sonatype.org/"
-      if (isSnapshot.value)
-        Some("snapshots" at nexus + "content/repositories/snapshots")
-      else
-        Some("releases"  at nexus + "service/local/staging/deploy/maven2")
-    }
-  )
+assembly / assemblyMergeStrategy := {
+  case PathList("META-INF", "services", xs @ _*) => MergeStrategy.filterDistinctLines
+  case PathList("META-INF", xs @ _*)             => MergeStrategy.discard
+  case "reference.conf"                          => MergeStrategy.concat
+  case "application.conf"                        => MergeStrategy.concat
+  case x if x.endsWith(".proto")                => MergeStrategy.first
+  case _                                         => MergeStrategy.first
+}
